@@ -1,0 +1,37 @@
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+}
+
+.loader-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.loader {
+    border-top: 10px solid rgba(220, 103, 24, 1);
+    border-right: 10px solid rgba(255, 255, 255, 1);
+    border-bottom: 10px solid rgba(105, 73, 199, 1);
+    border-left: 10px solid rgba(105, 73, 199, 1);
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

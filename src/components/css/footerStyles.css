@@ -1,0 +1,85 @@
+.first {
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+}
+
+.second {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Eliminar diseño de lista */
+ul {
+    list-style-type: none;
+}
+
+/* Eliminar estilo de enlace */
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+a:hover {
+    color: rgba(0, 0, 0, .8);
+}
+
+.desc {
+    /* Justificar texto */
+    text-align: justify;
+}
+
+h3 {
+    font-size: 20px;
+    margin-bottom: 1vh;
+    font-weight: bold;
+}
+
+h4 {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 5vh;
+    font-weight: bold;
+}
+
+h5 {
+    font-size: 20px;
+    text-align: center;
+    margin: 20px;
+    font-weight: bold;
+}
+
+footer {
+    margin-top: 50px;
+    background-color: #fff;
+}
+
+hr {
+    border-color: #000;
+    opacity: .5;
+}
+
+#basic-nav-dropdown {
+    border-bottom: 2px solid #fff;
+    width: 180px;
+    transition: all .3s ease;
+}
+
+#basic-nav-dropdown:hover {
+    border-bottom: 2px solid #ff9634;
+    width: 180px;
+}
+
+/* Eliminar los bordes de los items */
+.dropdown-menu {
+    border: none;
+    opacity: 1;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+}
+
+.dropdown-item {
+    border-bottom-color: 3px solid #ff9634;
+    /* shadow */
+}
