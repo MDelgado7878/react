@@ -15,7 +15,7 @@ const Footer = () => {
                     <div className='links'>
                         <ul>
                             <li>
-                                <a target={"_blank"} href='https://prod.storage.oxxofintech.com.mx/PrivacyPolicy.pdf'>
+                                <a target={"_blank"} rel={"noreferrer"} href='https://prod.storage.oxxofintech.com.mx/PrivacyPolicy.pdf'>
                                     Aviso de Privacidad
                                 </a>
                             </li>
@@ -26,18 +26,18 @@ const Footer = () => {
                                 </NavDropdown>
                             </li>
                             <li>
-                                <a target={"_blank"} href='https://spinbyoxxo.com.mx/comisionistas/'>
+                                <a target={"_blank"} rel={"noreferrer"} href='https://spinbyoxxo.com.mx/comisionistas/'>
                                     Comisionistas
                                 </a>
                             </li>
                             <li>
-                                <a target={"_blank"} href='https://spinbyoxxo.com.mx/buro-de-entidades/'>
+                                <a target={"_blank"} rel={"noreferrer"} href='https://spinbyoxxo.com.mx/buro-de-entidades/'>
                                     Buró de Entidades Financieras
                                 </a>
                             </li>
                         </ul>
 
-                        <h4><a target={"_blank"} href='https://spinbyoxxo.com.mx/costos-y-comisiones/'>Consulta los costos y comisiones de nuestros servicios</a></h4>
+                        <h4><a target={"_blank"} rel={"noreferrer"} href='https://spinbyoxxo.com.mx/costos-y-comisiones/'>Consulta los costos y comisiones de nuestros servicios</a></h4>
                     </div>
                 </div>
                 <div className='second'>

